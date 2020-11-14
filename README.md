@@ -1,15 +1,21 @@
-```
-FROM ahmadarif/docker-laravel
+# Description
 
-# Copy Resources
-COPY . /var/www/html
+    Docker image for Laravel/Lumen Apps
 
-# Install dependencies
-RUN composer install
+## Sample Usage with caching
 
-# Expose port 80
-EXPOSE 80
+    ```Dockerfile
+    # 1: Install dependencies
+    FROM composer:2.0.6 as build-stage
 
-# Set supervisor to manage container processes
-ENTRYPOINT ["/usr/bin/supervisord"]
-```
+    WORKDIR /var/www/html
+    COPY . .
+    RUN composer install
+
+    # 2: Main app
+    FROM ahmadarif/docker-laravel:latest
+
+    COPY --from=build-stage /var/www/html /var/www/html
+    EXPOSE 80
+    ENTRYPOINT ["/usr/bin/supervisord"]
+    ```
