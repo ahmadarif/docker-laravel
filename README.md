@@ -4,7 +4,7 @@ FROM ahmadarif/docker-laravel
 # Copy Resources
 COPY . /var/www/html
 
-# Dump Autoload
+# Install dependencies
 RUN composer install
 
 # Expose port 80
