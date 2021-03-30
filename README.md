@@ -1,3 +1,5 @@
+[![ci](https://github.com/ahmadarif/docker-laravel/actions/workflows/main.yaml/badge.svg)](https://github.com/ahmadarif/docker-laravel/actions/workflows/main.yaml)
+
 # Description
 
     Docker image for Laravel/Lumen Apps
