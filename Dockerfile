@@ -34,7 +34,8 @@ RUN apt-get install -y \
     php7.4-iconv \
     php7.4-simplexml \
     php7.4-xmlreader \
-    php7.4-zip
+    php7.4-zip \
+    php7.4-intl
 
 #------------- FPM & Nginx configuration ----------------------------------------------------
 
